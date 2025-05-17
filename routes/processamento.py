@@ -9,7 +9,7 @@ router = APIRouter()
 
 desc_documentacao = (
     f"""
-    <b>Dados de processamento</b><br></b><br>
+    <b>Dados de processamento: "/processamento/ano/subcategoria"</b><br></b><br>
     <b>Possíveis valores</b><br>
     <b>ano:</b> {range_anos_embrapa[0]} a {range_anos_embrapa[1]}<br>
     <b>subcategoria:</b> {', '.join(abas_embrapa['processamento']['subcategorias'].keys())}
