@@ -101,6 +101,3 @@ Tecnologias Utilizadas
 - Pandas
 
 ---
-Contato
-
-Em caso de dúvidas ou sugestões, entre em contato com o time do projeto.
