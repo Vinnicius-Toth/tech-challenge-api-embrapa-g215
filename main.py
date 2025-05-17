@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from utils.utils import remover_tags_html
 
 # Rota de boas-vindas
 from routes.welcome import router as welcome_router
@@ -33,19 +34,19 @@ app = FastAPI(
     Bem-vindo à API EMBRAPA!
     
     Processamento: 
-    {desc_documentacao_processamento.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+    {remover_tags_html(desc_documentacao_processamento)}
 
     Comercialização:
-    {desc_documentacao_comercializacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+    {remover_tags_html(desc_documentacao_comercializacao)}
 
     Produção:
-    {desc_documentacao_producao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+    {remover_tags_html(desc_documentacao_producao)}
 
     Importação:
-    {desc_documentacao_importacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+    {remover_tags_html(desc_documentacao_importacao)}
 
     Exportação:
-    {desc_documentacao_exportacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+    {remover_tags_html(desc_documentacao_exportacao)}
     """,
     version="1.0.0"
 )

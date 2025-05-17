@@ -1,18 +1,6 @@
 from fastapi import HTTPException
 from enums.enums import abas_embrapa, url, range_anos_embrapa
 
-# def validar_abas_embrapa(aba: str) -> bool:
-#     """
-#     Valida se a aba informada na requisição é válida.
-#     :param aba: Nome da aba a ser validada.
-#     :return: True se a aba for válida, False caso contrário.
-#     """
-#     try:
-#         aba = abas_embrapa[aba]
-#         return True
-#     except:
-#         raise ValueError(f"Aba inválida. Escolha entre: {', '.join(abas_embrapa.keys())}")
-
 def validar_ano(ano: int) -> bool:
     """
     Valida se o ano informado na requisição está dentro do intervalo permitido.
@@ -55,3 +43,12 @@ def capturar_url(aba: str, ano: int, subcategoria= None) -> str:
     
     else:
         return url + f"ano={ano}&opcao={abas_embrapa[aba]['codigo']}"
+    
+def remover_tags_html(string: str) -> str:
+    """
+    Remove as tags HTML de uma string.
+    :param string: String a ser limpa.
+    :return: String sem tags HTML.
+    """
+    return string.replace("<b>", "").replace("</b>", "").replace("<br>", "")
+    
