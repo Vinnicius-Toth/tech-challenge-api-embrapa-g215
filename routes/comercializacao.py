@@ -35,7 +35,6 @@ async def get_comercializacao(ano: int) -> dict:
     :return: Dados de Comercializacao.
     """
     aba = "comercializacao"
-    # validar_abas_embrapa(aba)
     validar_ano(ano)
 
     try:

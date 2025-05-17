@@ -51,7 +51,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-
 app.include_router(welcome_router)
 app.include_router(producao_router)
 app.include_router(processamento_router)

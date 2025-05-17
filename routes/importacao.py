@@ -50,7 +50,7 @@ async def get_importacao(ano: int, subcategoria: str) -> dict:
     :return: Dados de importacao.
     """
     aba = "importacao"
-    # validar_abas_embrapa(aba)
+    
     validar_ano(ano)
     validar_subcategorias(aba, subcategoria)
 
