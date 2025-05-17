@@ -4,13 +4,17 @@ from fastapi.responses import HTMLResponse
 # Rota de boas-vindas
 from routes.welcome import router as welcome_router
 
-# Rotas de processamento
+# Rota de processamento
 from routes.processamento import router as processamento_router
 from routes.processamento import desc_documentacao as desc_documentacao_processamento
 
-# Rotas de comercialização
+# Rota de comercialização
 from routes.comercializacao import router as comercializacao_router
 from routes.comercializacao import desc_documentacao as desc_documentacao_comercializacao
+
+# Rota de produção
+from routes.producao import router as producao_router
+from routes.producao import desc_documentacao as desc_documentacao_producao
 
 app = FastAPI(
     title="API EMBRAPA",
@@ -25,10 +29,15 @@ app = FastAPI(
 
     Comercialização:
     {desc_documentacao_comercializacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+
+    Produção:
+    {desc_documentacao_producao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
     """,
     version="1.0.0"
 )
 
+
 app.include_router(welcome_router)
+app.include_router(producao_router)
 app.include_router(processamento_router)
 app.include_router(comercializacao_router)

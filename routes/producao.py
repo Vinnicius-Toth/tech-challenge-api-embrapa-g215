@@ -8,33 +8,33 @@ router = APIRouter()
 
 desc_documentacao = (
     f"""
-    <b>Dados de Comercializacao: "comercializacao/ano"</b><br></b><br>
+    <b>Dados de Producao: "producao/ano"</b><br></b><br>
     <b>Possíveis valores</b><br>
     <b>ano:</b> {range_anos_embrapa[0]} a {range_anos_embrapa[1]}<br>
     """
 )
 
-@router.get("/comercializacao", include_in_schema=False)
-async def comercializacao_root():
+@router.get("/producao", include_in_schema=False)
+async def producao_root():
     """
-    Rota informativa raiz para Comercializacao.
+    Rota informativa raiz para Producao.
     Retorna uma mensagem de erro informando que o ano deve ser informados na URL.
     :return: Mensagem de erro.
     """
     raise HTTPException(
             status_code=400, 
-            detail="Informe o ano na URL: /comercializacao/{ano}"
+            detail="Informe o ano na URL: /producao/{ano}"
         )
 
 
-@router.get("/comercializacao/{ano}", description=desc_documentacao, tags=["Comercializacao"])
-async def get_comercializacao(ano: int) -> dict:
+@router.get("/producao/{ano}", description=desc_documentacao, tags=["Producao"])
+async def get_producao(ano: int) -> dict:
     """
-    Rota para obter dados de Comercializacao.
+    Rota para obter dados de Producao.
     :param ano: Ano a ser informado.
-    :return: Dados de Comercializacao.
+    :return: Dados de Producao.
     """
-    aba = "comercializacao"
+    aba = "producao"
     # validar_abas_embrapa(aba)
     validar_ano(ano)
 
