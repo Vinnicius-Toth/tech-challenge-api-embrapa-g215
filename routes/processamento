@@ -1,0 +1,22 @@
+from fastapi import APIRouter
+from scrape.scrape import scrape_table
+from utils.utils import validar_abas_embrapa
+from utils.utils import validar_ano
+from utils.utils import validar_subcategorias
+from utils.utils import capturar_url
+
+router = APIRouter()
+
+@router.get("/processamento/{ano}/{subcategoria}")
+async def get_processamento(ano: int, subcategoria: str) -> dict:
+        aba = "processamento"
+        # validar_abas_embrapa(aba)
+        validar_ano(ano)
+        validar_subcategorias(aba, subcategoria)
+
+        try:
+            url = capturar_url(aba, ano, subcategoria)
+            return await { "200": "OK", "data": await scrape_table(url) }
+        except Exception as e:
+            return { "500": "error", "message": f"Site da EMBRAPA está fora do ar, tente novamente mais tarde - {str(e)}" }
+            
