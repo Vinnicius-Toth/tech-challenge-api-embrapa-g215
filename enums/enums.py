@@ -1,5 +1,7 @@
 url = "http://vitibrasil.cnpuv.embrapa.br/index.php?"
 
+range_anos_embrapa = (1970, 2023)
+
 abas_embrapa = {
     "producao": {
         "codigo": "opt_02",
