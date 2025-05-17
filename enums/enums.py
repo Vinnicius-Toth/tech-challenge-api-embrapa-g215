@@ -37,6 +37,11 @@ abas_embrapa = {
     },
     "exportacao": {
         "codigo": "opt_06",
-        "subcategorias": {}
+        "subcategorias": {
+            "vinhos_de_mesa": "subopt_01",
+            "espumantes": "subopt_02",
+            "uvas_frescas": "subopt_03",
+            "suco_de_uva": "subopt_04",
+        }
     }
 }
