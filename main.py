@@ -20,6 +20,10 @@ from routes.producao import desc_documentacao as desc_documentacao_producao
 from routes.importacao import router as importacao_router
 from routes.importacao import desc_documentacao as desc_documentacao_importacao
 
+# Rota de exportação
+from routes.exportacao import router as exportacao_router
+from routes.exportacao import desc_documentacao as desc_documentacao_exportacao
+
 app = FastAPI(
     title="API EMBRAPA",
     description=f"""
@@ -39,6 +43,9 @@ app = FastAPI(
 
     Importação:
     {desc_documentacao_importacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
+
+    Exportação:
+    {desc_documentacao_exportacao.replace('<b>', '').replace('</b>', '').replace('<br>', '')}
     """,
     version="1.0.0"
 )
@@ -49,3 +56,4 @@ app.include_router(producao_router)
 app.include_router(processamento_router)
 app.include_router(comercializacao_router)
 app.include_router(importacao_router)
+app.include_router(exportacao_router)
