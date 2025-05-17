@@ -23,7 +23,10 @@ async def processamento_root():
     Retorna uma mensagem de erro informando que o ano e a subcategoria devem ser informados na URL.
     :return: Mensagem de erro.
     """
-    raise HTTPException(status_code=400, detail="Informe o ano e a subcategoria na URL: /processamento/{ano}/{subcategoria}")
+    raise HTTPException(
+            status_code=400, 
+            detail="Informe o ano e a subcategoria na URL: /processamento/{ano}/{subcategoria}"
+        )
 
 @router.get("/processamento/{ano}", include_in_schema=False)
 async def processamento_ano(ano: int):
@@ -33,7 +36,10 @@ async def processamento_ano(ano: int):
     :param ano: Ano a ser informado.
     :return: Mensagem de erro.
     """
-    raise HTTPException(status_code=400, detail="Informe também a subcategoria na URL: /processamento/{ano}/{subcategoria}")
+    raise HTTPException(
+            status_code=400, 
+            detail="Informe também a subcategoria na URL: /processamento/{ano}/{subcategoria}"
+        )
 
 @router.get("/processamento/{ano}/{subcategoria}", description=desc_documentacao, tags=["Processamento"])
 async def get_processamento(ano: int, subcategoria: str) -> dict:
@@ -53,4 +59,7 @@ async def get_processamento(ano: int, subcategoria: str) -> dict:
         data = await scrape_table(url)
         return { "200": "OK", "data": data }
     except Exception as e:
-        return { "500": "error", "message": f"Site da EMBRAPA está fora do ar, tente novamente mais tarde - {str(e)}" }
+        raise HTTPException(
+            status_code=500,
+            detail=f"Site da EMBRAPA está fora do ar, tente novamente mais tarde - {str(e)}"
+        )
