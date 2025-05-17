@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 from enums.enums import abas_embrapa, url
 
 def validar_abas_embrapa(aba: str) -> bool:
@@ -33,7 +34,10 @@ def validar_subcategorias(aba: str, subcategoria: str) -> bool:
         abas_embrapa[aba]["subcategorias"][subcategoria]
         return True
     except KeyError:
-        raise ValueError(f"Subcategoria inválida. Escolha entre: {', '.join(abas_embrapa[aba]['subcategorias'].keys())}")
+        raise HTTPException(
+            status_code=400,
+            detail=f"Subcategoria inválida. Para a aba: {aba} - Escolha entre: {', '.join(abas_embrapa[aba]['subcategorias'].keys())}"
+        )
     
 def capturar_url(aba: str, ano: int, subcategoria= None) -> str:
     """
