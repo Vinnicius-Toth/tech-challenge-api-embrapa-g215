@@ -1,17 +1,17 @@
 from fastapi import HTTPException
-from enums.enums import abas_embrapa, url
+from enums.enums import abas_embrapa, url, range_anos_embrapa
 
-def validar_abas_embrapa(aba: str) -> bool:
-    """
-    Valida se a aba informada na requisição é válida.
-    :param aba: Nome da aba a ser validada.
-    :return: True se a aba for válida, False caso contrário.
-    """
-    try:
-        aba = abas_embrapa[aba]
-        return True
-    except:
-        raise ValueError(f"Aba inválida. Escolha entre: {', '.join(abas_embrapa.keys())}")
+# def validar_abas_embrapa(aba: str) -> bool:
+#     """
+#     Valida se a aba informada na requisição é válida.
+#     :param aba: Nome da aba a ser validada.
+#     :return: True se a aba for válida, False caso contrário.
+#     """
+#     try:
+#         aba = abas_embrapa[aba]
+#         return True
+#     except:
+#         raise ValueError(f"Aba inválida. Escolha entre: {', '.join(abas_embrapa.keys())}")
 
 def validar_ano(ano: int) -> bool:
     """
@@ -19,9 +19,12 @@ def validar_ano(ano: int) -> bool:
     :param ano: Ano a ser validado.
     :return: True se o ano for válido, False caso contrário.
     """
-    if 1970 <= ano <= 2023:
+    if range_anos_embrapa[0] <= ano <= range_anos_embrapa[1]:
         return True
-    raise ValueError("Ano fora do intervalo permitido (1970-2023)")
+    raise HTTPException(
+            status_code=400,
+            detail=f"Ano inválido. Escolha um ano entre {range_anos_embrapa[0]} e {range_anos_embrapa[1]}."
+        )
 
 def validar_subcategorias(aba: str, subcategoria: str) -> bool:
     """
