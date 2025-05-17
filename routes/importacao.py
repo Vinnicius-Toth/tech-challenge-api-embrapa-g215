@@ -3,7 +3,7 @@ from scrape.scrape import scrape_table
 from utils.utils import validar_ano
 from utils.utils import validar_subcategorias
 from utils.utils import capturar_url
-from enums.enums import abas_embrapa, range_anos_embrapa
+from enums.enums import abas_embrapa, range_anos_import_export
 
 router = APIRouter()
 
@@ -11,7 +11,7 @@ desc_documentacao = (
     f"""
     <b>Dados de Importacao: "/importacao/ano/subcategoria"</b><br></b><br>
     <b>Possíveis valores</b><br>
-    <b>ano:</b> {range_anos_embrapa[0]} a {range_anos_embrapa[1]}<br>
+    <b>ano:</b> {range_anos_import_export[0]} a {range_anos_import_export[1]}<br>
     <b>subcategoria:</b> {', '.join(abas_embrapa['importacao']['subcategorias'].keys())}
     """
 )
@@ -51,7 +51,7 @@ async def get_importacao(ano: int, subcategoria: str) -> dict:
     """
     aba = "importacao"
     
-    validar_ano(ano)
+    validar_ano(ano, flg_import_export=True)
     validar_subcategorias(aba, subcategoria)
 
     try:

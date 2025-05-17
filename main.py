@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 from utils.utils import remover_tags_html
 
 # Rota de boas-vindas
