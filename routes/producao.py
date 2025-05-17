@@ -35,7 +35,7 @@ async def get_producao(ano: int) -> dict:
     :return: Dados de Producao.
     """
     aba = "producao"
-    # validar_abas_embrapa(aba)
+    
     validar_ano(ano)
 
     try:

@@ -1,6 +1,7 @@
 url = "http://vitibrasil.cnpuv.embrapa.br/index.php?"
 
 range_anos_embrapa = (1970, 2023)
+range_anos_import_export = (1970, 2024)
 
 abas_embrapa = {
     "producao": {

@@ -50,7 +50,7 @@ async def get_processamento(ano: int, subcategoria: str) -> dict:
     :return: Dados de processamento.
     """
     aba = "processamento"
-    # validar_abas_embrapa(aba)
+    
     validar_ano(ano)
     validar_subcategorias(aba, subcategoria)
 
