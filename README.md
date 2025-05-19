@@ -1,15 +1,23 @@
-# tech-challenge-api-embrapa-g215
+# 📊 tech-challenge-api-embrapa-g215
 
 Projeto Tech Challenge - Fase 1 - Engenharia de Machine Learning  
 Consumo de Dados da Embrapa via API
 
-## Descrição
-
-Esta API foi desenvolvida para facilitar o acesso a dados públicos da Embrapa relacionados à produção, processamento, comercialização, importação e exportação de uvas no Brasil. Utiliza FastAPI para expor endpoints RESTful e realiza scraping dos dados diretamente do site da Embrapa.
+## 🌐 Deploy URL
+**[Tech Challenge Api Embrapa - G215](https://tech-challenge-api-embrapa-g215.onrender.com/)**
 
 ---
 
-## Como executar
+## 🚀 Descrição
+
+Esta API foi desenvolvida para facilitar o acesso a dados públicos da [EMBRAPA's Vitibrasil portal](http://vitibrasil.cnpuv.embrapa.br/download/) relacionados à produção, processamento, comercialização, importação e exportação de uvas no Brasil. Utiliza FastAPI para expor endpoints RESTful e realiza scraping dos dados diretamente do site da Embrapa.
+
+---
+
+## ⚙️ Arquitetura
+![alt text](docs/Arquitetura_API_EMBRAPA.png)
+
+## 🛠️ Como executar
 
 1. **Clone o repositório:**
 ```sh
@@ -41,51 +49,51 @@ uvicorn main:app --reload
 ```
 ---
 
-Endpoints Principais
+## 📡 Endpoints Principais
 
-Boas-vindas
+### Boas-vindas
 
 - GET /
   Exibe uma mensagem de boas-vindas.
 
 ---
 
-Processamento
+### Processamento
 
 - GET /processamento/{ano}/{subcategoria}
   Retorna dados de processamento para o ano e subcategoria informados.
 
 ---
 
-Comercialização
+### Comercialização
 
 - GET /comercializacao/{ano}
   Retorna dados de comercialização para o ano informado.
 
 ---
 
-Produção
+### Produção
 
 - GET /producao/{ano}/{subcategoria}
   Retorna dados de produção para o ano e subcategoria informados.
 
 ---
 
-Importação
+### Importação
 
 - GET /importacao/{ano}/{subcategoria}
   Retorna dados de importação para o ano e subcategoria informados.
 
 ---
 
-Exportação
+### Exportação
 
 - GET /exportacao/{ano}/{subcategoria}
   Retorna dados de exportação para o ano e subcategoria informados.
 
 ---
 
-Observações
+### Observações
 
 - Os endpoints /processamento, /processamento/{ano}, /exportacao, /exportacao/{ano}, etc., existem apenas para orientar o usuário sobre o uso correto das rotas e retornam mensagens de erro amigáveis.
 - Consulte a documentação interativa para ver exemplos de parâmetros válidos para cada rota.
@@ -93,14 +101,15 @@ Observações
 
 ---
 
-Tecnologias Utilizadas
-
+## 🧰 Tech Stack
+- Python 3.11+  
 - FastAPI
 - httpx
-- BeautifulSoup
+- BeautifulSoup4  
 - Pandas
 
 ---
-Contato
 
-Em caso de dúvidas ou sugestões, entre em contato com o time do projeto.
+## 👨‍💻 Desenvolvedores
+- Vinnicius Toth - vinni.toth@gmail.com
+- G215 Team – FIAP Tech Challenge 1

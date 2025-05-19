@@ -1,0 +1,41 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.6">
+  <diagram name="Página-1" id="2o_AUx6Z_lly2EBeLW25">
+    <mxGraphModel dx="1188" dy="619" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vammjLF29BetW9YDWvWG-1" value="API Embrapa" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=api" vertex="1" parent="1">
+          <mxGeometry x="510" y="185" width="125" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" edge="1" parent="1" source="vammjLF29BetW9YDWvWG-2" target="vammjLF29BetW9YDWvWG-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-2" value="Site EMBRAPA" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" vertex="1" parent="1">
+          <mxGeometry x="50" y="210" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-3" value="Web Scrapping" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://niltechedu.com/blog/wp-content/uploads/2021/11/python-programming-language.png;" vertex="1" parent="1">
+          <mxGeometry x="290" y="215" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;shape=link;flowAnimation=1;" edge="1" parent="1" source="vammjLF29BetW9YDWvWG-3" target="vammjLF29BetW9YDWvWG-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shape=link;flowAnimation=1;" edge="1" parent="1" source="vammjLF29BetW9YDWvWG-9" target="vammjLF29BetW9YDWvWG-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-9" value="Usuário" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="585" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-10" value="GET&lt;br&gt;- Processamento&lt;br&gt;- Comercialização&lt;br&gt;- Procução&lt;br&gt;- Importação&lt;br&gt;- Exportação&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="410" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vammjLF29BetW9YDWvWG-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.995;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;shape=link;flowAnimation=1;" edge="1" parent="1" source="vammjLF29BetW9YDWvWG-10" target="vammjLF29BetW9YDWvWG-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="655" y="261" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
