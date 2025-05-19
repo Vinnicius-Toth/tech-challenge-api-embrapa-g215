@@ -15,7 +15,7 @@ Esta API foi desenvolvida para facilitar o acesso a dados públicos da [EMBRAPA'
 ---
 
 ## ⚙️ Arquitetura
-![alt text](docs/Arquitetura_API_EMBRAPA.png)
+![alt text](docs/Arquitetura_API_EMBRAPA.jpg)
 
 ## 🛠️ Como executar
 
